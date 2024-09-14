@@ -5,20 +5,20 @@ import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 
 public class StartClicker {
-    public void clicker(int state) throws AWTException {
+    public void clicker() throws AWTException {
+        Robot robot = new Robot();
+        while (!Thread.interrupted()) {
             try {
-                Robot robot = new Robot();
-                while (state != 2) {
-                    robot.delay(50);
-//                    robot.mousePress(InputEvent.getMaskForButton(1));
-//                    robot.mouseRelease(InputEvent.getMaskForButton(1));
-                    robot.keyPress(KeyEvent.VK_V);
-                    if (state == 2) {
+                robot.delay(10);
+                robot.mousePress(InputEvent.getMaskForButton(1));
+                robot.mouseRelease(InputEvent.getMaskForButton(1));
+//                    robot.keyPress(KeyEvent.VK_V);
+                    if (Thread.interrupted()) {
                         break;
                     }
-                }
-            } catch (AWTException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
+        }
     }
 }
