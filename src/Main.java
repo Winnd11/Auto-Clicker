@@ -1,3 +1,4 @@
+import com.github.kwhat.jnativehook.keyboard.NativeKeyEvent;
 import org.william.StartClicker;
 import org.william.frame.MyFrame;
 import org.william.label.MyLabel;
@@ -16,8 +17,9 @@ import com.github.kwhat.jnativehook.keyboard.NativeKeyEvent;
 import com.github.kwhat.jnativehook.keyboard.NativeKeyListener;
 
 public class Main implements NativeKeyListener {
+    StartClicker startClicker = new StartClicker();
     public void nativeKeyPressed(NativeKeyEvent e) {
-        if (e.getKeyCode() == NativeKeyEvent.VC_B) {
+        if (e.getKeyCode() == NativeKeyEvent.VC_SPACE) {
             System.out.println("Break");
             try {
                 GlobalScreen.unregisterNativeHook();
@@ -31,7 +33,19 @@ public class Main implements NativeKeyListener {
     }
 
     public void nativeKeyTyped(NativeKeyEvent e) {
-        System.out.println(e.getKeyChar());
+        if (e.getKeyChar() == KeyEvent.VK_A) {
+            try {
+                startClicker.clicker(1);
+            } catch (AWTException ex) {
+                throw new RuntimeException(ex);
+            }
+        } else if (e.getKeyCode() == KeyEvent.VK_L) {
+            try {
+                startClicker.clicker(2);
+            } catch (AWTException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
     }
 
 

@@ -10,7 +10,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/jnativehook-2.2.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/src/org/jnativehook/jnativehook-2.2.2.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

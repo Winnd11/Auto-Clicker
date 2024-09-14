@@ -12,7 +12,7 @@ public class StartClicker {
                     robot.delay(50);
 //                    robot.mousePress(InputEvent.getMaskForButton(1));
 //                    robot.mouseRelease(InputEvent.getMaskForButton(1));
-                    robot.keyPress(KeyEvent.VK_L);
+                    robot.keyPress(KeyEvent.VK_V);
                     if (state == 2) {
                         break;
                     }
