@@ -12,6 +12,5 @@ public class MyFrame extends JFrame {
         this.setSize(300, 200);
         this.add(addComponent);
         this.setFocusable(true);
-        this.setFocusTraversalKeysEnabled(false);
     }
 }
