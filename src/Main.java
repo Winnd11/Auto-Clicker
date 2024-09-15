@@ -20,8 +20,7 @@ public class Main implements NativeKeyListener {
     }
 
     public void nativeKeyTyped(NativeKeyEvent e) {
-        if (e.getKeyChar() == KeyEvent.VK_A) {
-            System.out.println("Start");
+        if (e.getKeyChar() == KeyEvent.VK_1) {
                 clickerThread = new Thread(() -> {
                     try {
                         startClicker.clicker();
@@ -30,8 +29,7 @@ public class Main implements NativeKeyListener {
                     }
                 });
                 clickerThread.start();
-            } else if (e.getKeyChar() == KeyEvent.VK_B) {
-                System.out.println("B");
+            } else if (e.getKeyChar() == KeyEvent.VK_2) {
                 clickerThread.interrupt();
                 }
             }

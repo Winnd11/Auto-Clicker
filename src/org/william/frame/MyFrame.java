@@ -9,7 +9,7 @@ public class MyFrame extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
         this.setResizable(false);
-        this.setSize(500, 500);
+        this.setSize(300, 200);
         this.add(addComponent);
         this.setFocusable(true);
         this.setFocusTraversalKeysEnabled(false);
