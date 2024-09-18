@@ -10,13 +10,7 @@ public class MyFrame extends JFrame implements ActionListener {
 
     public MyFrame(Component addComponent) {
         jButton = new JButton();
-//        jButton.setBounds(90, 50, 120, 40);
         jButton.addActionListener(this);
-//        jButton.setText("Is Activated");
-//        jButton.setFocusable(false);
-//        jButton.setBackground(new Color(0xE8E8E8));
-        //jButton.setFont(new Font("Helvetica", Font.BOLD, 10));
-//        jButton.setBorder(BorderFactory.createLineBorder(new Color(0x151515)));
 
         JMenu jMenu = new JMenu("Options");
         JMenuItem mI = new JMenuItem("Speed");
