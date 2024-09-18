@@ -7,13 +7,15 @@ import java.awt.event.ActionListener;
 
 public class MyFrame extends JFrame implements ActionListener {
     JButton jButton;
+    JMenuItem mI;
 
     public MyFrame(Component addComponent) {
         jButton = new JButton();
         jButton.addActionListener(this);
 
         JMenu jMenu = new JMenu("Options");
-        JMenuItem mI = new JMenuItem("Speed");
+        mI = new JMenuItem("Speed");
+        mI.addActionListener(this);
         JMenuBar jMenuBar = new JMenuBar();
 
         jMenu.add(mI);
@@ -23,7 +25,7 @@ public class MyFrame extends JFrame implements ActionListener {
         this.setTitle("Auto Clicker");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
-        this.setSize(300, 200);
+        this.setSize(250, 250);
         this.add(addComponent);
         this.setJMenuBar(jMenuBar);
 //        this.add(jButton);
@@ -35,8 +37,12 @@ public class MyFrame extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == jButton) {
-
+        if (e.getSource() == mI) {
+            JFrame jFrameSpeed = new JFrame();
+            jFrameSpeed.setTitle("Options / Speed");
+            jFrameSpeed.setVisible(true);
+            jFrameSpeed.setResizable(false);
+            jFrameSpeed.setSize(250,250);
         }
     }
 }
