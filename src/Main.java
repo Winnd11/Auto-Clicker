@@ -12,7 +12,7 @@ import com.github.kwhat.jnativehook.keyboard.NativeKeyListener;
 
 public class Main implements NativeKeyListener {
     private Thread clickerThread;
-    StartClicker startClicker = new StartClicker();
+    static StartClicker startClicker = new StartClicker();
     public void nativeKeyPressed(NativeKeyEvent e) {
     }
 
@@ -36,7 +36,7 @@ public class Main implements NativeKeyListener {
 
     public static void main(String[] args) {
         MyLabel myLabel = new MyLabel();
-        MyFrame myFrame = new MyFrame(myLabel);
+        MyFrame myFrame = new MyFrame(myLabel, startClicker);
 
         try {
             GlobalScreen.registerNativeHook();

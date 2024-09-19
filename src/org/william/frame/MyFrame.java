@@ -1,5 +1,7 @@
 package org.william.frame;
 
+import org.william.StartClicker;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,8 +11,11 @@ public class MyFrame extends JFrame implements ActionListener {
     JButton jButton;
     JMenuItem mI;
     JTextField jTextField;
+    JFrame jFrameSpeed;
+    StartClicker startClicker;
 
-    public MyFrame(Component addComponent) {
+    public MyFrame(Component addComponent, StartClicker startClicker) {
+        this.startClicker = startClicker;
 //        jButton = new JButton();
 //        jButton.addActionListener(this);
 
@@ -35,19 +40,17 @@ public class MyFrame extends JFrame implements ActionListener {
         this.setResizable(false);
         this.getContentPane().setBackground(new Color(0xE8E8E8));
         this.setLocationRelativeTo(null);
-    }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
         jTextField = new JTextField(10);
         jTextField.setBounds(0, 0, 100, 100);
 
         jButton = new JButton("Delay");
         jButton.setSize(10, 10 );
         jButton.setBackground(new Color(0xE8E8E8));
+        jButton.addActionListener(this);
         jButton.setBorder(BorderFactory.createLineBorder(new Color(0x111111)));
 
-        JFrame jFrameSpeed = new JFrame();
+        jFrameSpeed = new JFrame();
         jFrameSpeed.setTitle("Options / Delay");
         jFrameSpeed.setResizable(true);
         jFrameSpeed.setSize(250,250);
@@ -56,8 +59,17 @@ public class MyFrame extends JFrame implements ActionListener {
         jFrameSpeed.add(jTextField);
         jFrameSpeed.add(jButton);
 
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
         if (e.getSource() == mI) {
             jFrameSpeed.setVisible(true);
+        }
+
+        if (e.getSource() == jButton) {
+            int value = Integer.parseInt(jTextField.getText());
+            startClicker.startDelay(value);
         }
     }
 }
