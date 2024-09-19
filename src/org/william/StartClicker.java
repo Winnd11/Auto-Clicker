@@ -12,7 +12,6 @@ public class StartClicker {
                 robot.delay(10);
                 robot.mousePress(InputEvent.getMaskForButton(1));
                 robot.mouseRelease(InputEvent.getMaskForButton(1));
-//                    robot.keyPress(KeyEvent.VK_V);
                     if (Thread.interrupted()) {
                         break;
                     }
